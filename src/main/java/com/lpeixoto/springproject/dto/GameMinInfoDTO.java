@@ -1,6 +1,7 @@
 package com.lpeixoto.springproject.dto;
 
 import com.lpeixoto.springproject.entities.Game;
+import com.lpeixoto.springproject.projections.GameMinProjection;
 
 public class GameMinInfoDTO {
 
@@ -19,6 +20,14 @@ public class GameMinInfoDTO {
         this.year = game.getYear();
         this.imgUrl = game.getImgUrl();
         this.shortDescription = game.getShortDescription();
+    }
+
+    public GameMinInfoDTO(GameMinProjection gameMinProjection) {
+        this.id = gameMinProjection.getId();
+        this.title = gameMinProjection.getTitle();
+        this.year = gameMinProjection.getYear();
+        this.imgUrl = gameMinProjection.getImgUrl();
+        this.shortDescription = gameMinProjection.getShortDescription();
     }
 
     public Long getId() {
